@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "Get available ads",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "ads": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get user stats",
+      "method": "GET",
+      "path": "/?user_id=test_user_123",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "balance": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Register click",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "user_id": "test_user_123",
+        "ad_id": "ad_001"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": "boolean"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

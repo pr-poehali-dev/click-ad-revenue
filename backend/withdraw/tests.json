@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "Get withdrawals history",
+      "method": "GET",
+      "path": "/?user_id=test_user_123",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "withdrawals": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create withdrawal request",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "user_id": "test_user_123",
+        "amount": 500,
+        "method": "Сбербанк",
+        "card_number": "1234567890123456"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": "boolean"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
